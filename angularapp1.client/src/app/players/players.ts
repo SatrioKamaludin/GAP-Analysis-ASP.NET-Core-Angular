@@ -1,0 +1,2 @@
+export interface Players {
+}

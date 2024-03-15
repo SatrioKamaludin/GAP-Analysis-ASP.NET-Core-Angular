@@ -258,3 +258,4 @@ C:\Users\satri\source\repos\AngularApp1\AngularApp1.Server\obj\Debug\net8.0\Angu
 C:\Users\satri\source\repos\AngularApp1\AngularApp1.Server\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\satri\source\repos\AngularApp1\AngularApp1.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\satri\source\repos\AngularApp1\AngularApp1.Server\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\satri\source\repos\AngularApp1\AngularApp1.Server\obj\Debug\net8.0\AngularApp1.Server.sourcelink.json

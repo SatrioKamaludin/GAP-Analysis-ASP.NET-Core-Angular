@@ -24,7 +24,7 @@ namespace AngularApp1.Server.Services
         {
             return await _context.Players
                 .Include(x => x.Position)
-                .FirstOrDefaultAsync(x => x.Id == id);
+                .FirstOrDefaultAsync(x => x.Id == id) ?? throw new InvalidOperationException();
         }
 
         public async Task<Player> CreatePlayer(Player player)

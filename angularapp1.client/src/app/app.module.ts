@@ -1,26 +1,28 @@
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { PlayersModule } from './players/players.module';
-import { ListComponent } from "./players/list/list.component";
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { PlayersModule } from './players/players.module';
+
+import { AppComponent } from './app.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { ListComponent } from "./players/list/list.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
+    NavMenuComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
+    FormsModule,
     PlayersModule,
     RouterModule.forRoot([
-      { path: 'players', component: ListComponent }
+      { path: '', redirectTo: 'players', pathMatch: 'full' },
+      { path: 'players', component: ListComponent },
     ])
   ],
   providers: [],

@@ -16,6 +16,15 @@ builder.Services.AddScoped<IPositionsService, PositionsService>();
 builder.Services.AddControllers();
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options => 
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularDevServer",
+        builder => builder.WithOrigins("https://localhost:4200") // Adjust the port if necessary.
+                           .AllowAnyHeader()
+                           .AllowAnyMethod());
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -24,6 +33,8 @@ var app = builder.Build();
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
+
+app.UseCors("AllowAngularDevServer");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
